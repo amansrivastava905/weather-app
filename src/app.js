@@ -9,6 +9,7 @@ const { request } = require("http");
 
 // create your express app
 const app=express();
+const port=process.env.PORT || 3000;
 
 // define paths for express config
 const publicdir=path.join(__dirname,'../public');
@@ -83,8 +84,8 @@ app.get('*',(req,res)=>{
 
 
 // start your server
-app.listen('3000',(e)=>{
-    console.log("server started");
+app.listen(port,(e)=>{
+    console.log("server started at"+ port);
 })
 
 // hello just to commit again
